@@ -1,10 +1,4 @@
 /*LOGIN FORM STYLE*/
-body {
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-  font-family: Arial, sans-serif;
-}
 
 .container {
   text-align: center;
@@ -19,21 +13,24 @@ body {
 h2 {
   font-weight: bold;
 }
-
+.login-form {
+  margin-top: 50px;
+  text-align: left;
+  justify-content: center;
+  display: flex;
+}
 .form-input {
-  display: block;
-
-  padding: 10px;
-  font-size: 10px;
-  margin: 10px;
+  margin-bottom: 10px;
+  width: 300px;
+  padding: 5px;
+  font-size: 14px;
 }
 
-.form-button {
-  margin-top: 5px;
-  padding: 16px 10;
-  font-size: 15px;
-  font-weight: bold;
-  position: left;
+.login-form button {
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+  margin: 2px;
 }
 
 .form-link {
@@ -45,6 +42,8 @@ h2 {
 .register-form {
   margin-top: 50px;
   text-align: left;
+  justify-content: center;
+  display: flex;
 }
 
 .register-form input {
@@ -55,12 +54,9 @@ h2 {
 }
 
 .register-form button {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  font-size: 14px;
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
 }
 
 .login-link {
@@ -69,19 +65,66 @@ h2 {
 }
 
 /*BILLS FORM STYLE*/
-#add-id {
-  position: fixed;
-  bottom: 0;
-  padding: 10px;
-  margin: 20px;
+.add-id {
+  margin-top: 50px;
   text-align: left;
-}
-button {
-  color: black;
-  margin: 3px;
-  padding: 3px;
-  border: none;
-  cursor: pointer;
-  font-size: 14px;
+  justify-content: center;
   display: flex;
+}
+.add-id input {
+  margin-bottom: 10px;
+  width: 300px;
+  padding: 5px;
+  font-size: 14px;
+}
+.add-id button {
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+}
+/*GROUPS FORM STYLE*/
+.table-container {
+  max-height: 300px;
+}
+
+table {
+  width: 70%;
+  border-collapse: collapse;
+  margin: auto;
+  padding: 10px;
+}
+table tr:nth-child(2),
+table tr:nth-child(4) {
+  background-color: grey;
+}
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: white;
+  height: 20px;
+}
+
+/*GROUP FORM STYLE INPUT BLOCK*/
+.add-container {
+  margin-top: 20px;
+  display: flex;
+  text-align: left;
+  justify-content: center;
+}
+.add-container input {
+  margin-bottom: 10px;
+  width: 300px;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.add-container button {
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
 }
