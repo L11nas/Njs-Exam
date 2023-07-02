@@ -39,7 +39,7 @@ h2 {
 }
 
 /*REGISTER FORM STYLE*/
-.register-form {
+#register-form {
   margin-top: 50px;
   text-align: left;
   justify-content: center;
@@ -83,10 +83,6 @@ h2 {
   border: 2px solid #555555;
 }
 /*GROUPS FORM STYLE*/
-.table-container {
-  max-height: 300px;
-}
-
 table {
   width: 70%;
   border-collapse: collapse;
