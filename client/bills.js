@@ -10,7 +10,7 @@ function handleAddGroup(event) {
   const groupId = groupIdInput.value;
 
   if (!groupId) {
-    alert('Please enter a group ID.');
+    alert('Please enter group ID.');
     return;
   }
 
@@ -28,9 +28,7 @@ function handleAddGroup(event) {
     })
     .catch((error) => {
       console.error('Error:', error);
-      alert(
-        'An error occurred while adding the group. Please try again later.'
-      );
+      alert('Error, please try again or later.');
     });
 
   groupIdInput.value = '';

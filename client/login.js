@@ -10,7 +10,7 @@ function handleLogin(event) {
   const password = document.querySelector('input[name="password"]').value;
 
   if (!email || !password) {
-    alert('Please enter both email and password.');
+    alert('Please enter email and password.');
     return;
   }
 
@@ -36,6 +36,6 @@ function handleLogin(event) {
     })
     .catch((error) => {
       console.error('Error:', error);
-      alert('An error occurred while logging in. Please try again later.');
+      alert('Error while logging in. Please try again or later.');
     });
 }

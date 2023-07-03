@@ -13,9 +13,7 @@ function fetchCardData() {
     })
     .catch((error) => {
       console.error('Error:', error);
-      alert(
-        'An error occurred while fetching the card data. Please try again later.'
-      );
+      alert('Error, while fetching the card data. Please try again or later.');
     });
 }
 
@@ -49,7 +47,7 @@ function handleAddBill(event) {
   const description = document.querySelector('#description').value;
 
   if (!amount || !description) {
-    alert('Please enter both amount and description.');
+    alert('Please enter description.');
     return;
   }
 
@@ -73,6 +71,6 @@ function handleAddBill(event) {
     })
     .catch((error) => {
       console.error('Error:', error);
-      alert('An error occurred while adding the bill. Please try again later.');
+      alert('error while adding the bill. Please try again or later.');
     });
 }

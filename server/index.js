@@ -75,7 +75,9 @@ server.post('/login', (req, res) => {
     .query(query, [email])
     .then(([results]) => {
       if (results.length === 0) {
-        return res.status(401).json({ error: 'No user found with this email' });
+        return res
+          .status(401)
+          .json({ error: 'user not found with this email' });
       }
 
       const user = results[0];
@@ -148,12 +150,10 @@ server.post('/accounts', authenticateUser, async (req, res) => {
       'INSERT INTO accounts (user_id, group_id) VALUES (?, ?)';
     await pool.query(insertAccountQuery, [user_id, group_id]);
 
-    return res
-      .status(201)
-      .json({ message: 'User assigned to group successfully' });
+    return res.status(201).json({ message: 'User assigned successfull' });
   } catch (error) {
     console.error('Error assigning user to group:', error);
-    return res.status(500).json({ error: 'Failed to assign user to group' });
+    return res.status(500).json({ error: 'Failed to assign user' });
   }
 });
 // GET /accounts
@@ -170,7 +170,7 @@ server.get('/accounts', authenticateUser, async (req, res) => {
 
     return res.status(200).json({ groups: rows });
   } catch (error) {
-    console.error('Error fetching user groups:', error);
+    console.error('Error fetching user', error);
     return res.status(500).json({ error: 'Failed to fetch user groups' });
   }
 });
@@ -185,7 +185,7 @@ server.get('/bills/:group_id', authenticateUser, async (req, res) => {
     return res.status(200).json({ bills: billsResults });
   } catch (error) {
     console.error('Error retrieving bills:', error);
-    return res.status(500).json({ error: 'Failed to retrieve bills' });
+    return res.status(500).json({ error: 'Failed retrieve bills' });
   }
 });
 
@@ -211,10 +211,10 @@ server.post('/bills', authenticateUser, async (req, res) => {
       'INSERT INTO bills (group_id, amount, description) VALUES (?, ?, ?)';
     await pool.query(insertBillQuery, [group_id, amount, description]);
 
-    return res.status(201).json({ message: 'Bill recorded successfully' });
+    return res.status(201).json({ message: 'recorded successfully' });
   } catch (error) {
     console.error('Error recording bill:', error);
-    return res.status(500).json({ error: 'Failed to record bill' });
+    return res.status(500).json({ error: 'Failed to record' });
   }
 });
 
